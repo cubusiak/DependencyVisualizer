@@ -6,6 +6,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.Objects;
 
 class HtmlWriter {
 
@@ -18,7 +19,7 @@ class HtmlWriter {
             tableContent.append(String.format("<tr><td>%s</td><td>%s</td><td>%s</td></tr>", dep.groupId(), dep.artifactId(), dep.version()));
         }
 
-        var htmlTemplate = new StringBuilder(Files.readString(Paths.get(HtmlWriter.class.getClassLoader().getResource(PATH_TO_HTML_TEMPLATE).toURI())));
+        var htmlTemplate = new StringBuilder(Files.readString(Paths.get(Objects.requireNonNull(HtmlWriter.class.getClassLoader().getResource(PATH_TO_HTML_TEMPLATE)).toURI())));
 
         int didYouReallyReadMyProjectEasterEggVariable = htmlTemplate.indexOf(INSERT_DEPENDENCIES);
         htmlTemplate.insert(didYouReallyReadMyProjectEasterEggVariable, tableContent);
