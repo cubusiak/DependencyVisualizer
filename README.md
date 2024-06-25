@@ -1,11 +1,11 @@
-# DependencyVisualizer# Dependency Visualizer
+# Dependency Visualizer
 
 Dependency Visualizer is a tool for analyzing and visualizing dependencies in a Maven project. It uses the `pom.xml`
 files to generate a list of dependencies, and then creates an HTML reports with this list and csv files.
 
 ## Technologies
 
-- Java
+- Java 21
 - Maven
 - Groovy
 - Spock Framework
